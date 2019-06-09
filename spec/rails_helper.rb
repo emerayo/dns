@@ -69,7 +69,6 @@ RSpec.configure do |config|
   config.render_views
 
   config.include ActiveSupport::Testing::TimeHelpers
-  config.include TestHelper
   config.include FactoryBot::Syntax::Methods
 end
 
