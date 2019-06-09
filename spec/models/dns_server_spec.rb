@@ -5,6 +5,10 @@ require 'rails_helper'
 RSpec.describe DnsServer do
   subject { build(:dns_server) }
 
+  describe 'associations' do
+    it { is_expected.to have_many(:hostnames) }
+  end
+
   describe 'validations' do
     it { is_expected.to validate_presence_of(:ip) }
     it { is_expected.to validate_uniqueness_of(:ip).case_insensitive }
