@@ -7,6 +7,7 @@ RSpec.describe DnsServer do
 
   describe 'associations' do
     it { is_expected.to have_many(:hostnames) }
+    it { is_expected.to accept_nested_attributes_for(:hostnames) }
   end
 
   describe 'validations' do
@@ -29,6 +30,17 @@ RSpec.describe DnsServer do
       ]
 
       is_expected.not_to allow_values(*invalid_values).for(:ip)
+    end
+
+    describe '#repeated_domains' do
+      it 'should add an error for duplicated domains' do
+        subject.hostnames.build(domain: '1.com')
+        subject.hostnames.build(domain: '1.com')
+        error = I18n.t('activerecord.errors.models.dns_server.attributes.hostnames.duplicated_domains')
+
+        expect(subject.valid?).to be_falsey
+        expect(subject.errors.messages).to eq(hostnames: [error])
+      end
     end
   end
 end

@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    errors:
+      models:
+        dns_server:
+          attributes:
+            hostnames:
+              duplicated_domains: 'Hostnames domains must be unique'
