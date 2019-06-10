@@ -12,6 +12,9 @@ gem 'rails', '~> 6.0.0.rc1'
 # https://bitbucket.org/ged/ruby-pg/wiki/Home
 gem 'pg', '1.1.4'
 
+# A set of common locale data and translations to internationalize and / or localize your Rails applications.
+gem 'rails-i18n', '5.1.3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
