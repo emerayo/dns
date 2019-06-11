@@ -1,0 +1,4 @@
+en:
+  search:
+    error:
+      wrong_page: 'unavailable page, please try again with number between 1 and %{last_page}'
