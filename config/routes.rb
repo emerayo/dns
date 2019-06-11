@@ -5,5 +5,7 @@ Rails.application.routes.draw do
 
   namespace :v1 do
     resources :dns_servers, only: :create
+
+    get 'search', to: 'hostnames#search'
   end
 end
